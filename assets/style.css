@@ -1,7 +1,6 @@
 body {
-  font-family: "Roboto", sans-serif;
-  color: black;
-
+  font-family: "Open Sans", sans-serif;
+  color: #272829;
 }
 
 a {
@@ -10,15 +9,50 @@ a {
 }
 
 a:hover {
-  color: palegoldenrod;
+  color: #37b3ed;
   text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
-
+#menu-deroulant, #menu-deroulant ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#menu-deroulant {
+/* on centre le menu dans la page */
+    text-align: center;
+}
+#menu-deroulant li {
+/* on place les liens du menu horizontalement */
+    display: flex;
+}
+#menu-deroulant ul li {
+/* on enlève ce comportement pour les liens du sous menu */
+    display: inherit;
+}
+#menu-deroulant a {
+    text-decoration: none;
+    display: block;
+  color:#000;
+}
+#menu-deroulant ul {
+    position: absolute;
+/* on cache les sous menus complètement sur la gauche */
+    left: -999em;
+    text-align: left;
+    z-index: 1000;
+}
+#menu-deroulant li:hover ul {
+/* Au survol des li du menu on replace les sous menus */
+    left: auto;
+}
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
 .back-to-top {
   position: fixed;
   visibility: hidden;
@@ -26,26 +60,29 @@ h1, h2, h3, h4, h5, h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: black;
+  background: #149ddd;
   width: 40px;
   height: 40px;
   border-radius: 50px;
   transition: all 0.4s;
 }
 .back-to-top i {
-  font-size: 42px;
-  color: grey;
+  font-size: 28px;
+  color: #fff;
   line-height: 0;
 }
 .back-to-top:hover {
-  background: black;
-  color: white;
+  background: #2eafec;
+  color: #fff;
 }
 .back-to-top.active {
-  visibility: visible;
+  visibility: hidden;
   opacity: 1;
 }
 
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
 #header {
   position: fixed;
   top: 0;
@@ -54,43 +91,43 @@ h1, h2, h3, h4, h5, h6 {
   width: 300px;
   transition: all ease-in-out 0.3s;
   z-index: 9997;
-  transition: all 0.5s;
+  transition: all 0.3s;
   padding: 0 15px;
-  background: #040b14;
+  background: grey;
+  background-size: cover;
   overflow-y: auto;
 }
 #header .profile img {
-  margin: 30px;
+  margin: 15px auto;
   display: block;
-  border-radius: 50%;
-  width: 80%;
-  box-shadow: 0 5px 550px grey;
+  width: 120px;
+  border: 8px solid #2c2f3f;
 }
 #header .profile h1 {
   font-size: 24px;
-  margin: 5;
+  margin: 0;
   padding: 0;
   font-weight: 600;
   -moz-text-align-last: center;
   text-align-last: center;
-  font-family: "Roboto", bold;
+  font-family: "Poppins", sans-serif;
 }
 #header .profile h1 a, #header .profile h1 a:hover {
   color: #fff;
   text-decoration: none;
 }
 #header .profile .social-links a {
-  font-size: 25px;
+  font-size: 18px;
   display: inline-block;
   background: #212431;
-  color: #fff;
+  color: white;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
   border-radius: 50%;
   text-align: center;
   width: 36px;
-  height: 34px;
+  height: 36px;
   transition: 0.3s;
 }
 #header .profile .social-links a:hover {
@@ -112,9 +149,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 0;
   }
 }
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
 
 .nav-menu {
-  padding: 70px 0 0 0;
+  padding: 30px 0 0 0;
 }
 .nav-menu * {
   margin: 0;
@@ -128,26 +169,26 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a, .nav-menu a:focus {
   display: flex;
   align-items: center;
-  color: #a8a9b4;
+  color: lightgrey;
   padding: 12px 15px;
   margin-bottom: 8px;
   transition: 0.3s;
   font-size: 15px;
 }
 .nav-menu a i, .nav-menu a:focus i {
-  font-size: 24px;
+  font-size: 35px;
   padding-right: 8px;
-  color: #6f7180;
+  color: whitesmoke ;
 }
 .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus, .nav-menu li:hover > a {
   text-decoration: none;
   color: #fff;
 }
 .nav-menu a:hover i, .nav-menu .active i, .nav-menu .active:focus i, .nav-menu li:hover > a i {
-  color: #1f136e;
+  color: #0357bf;
 }
 
-
+/* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
   right: 15px;
@@ -157,7 +198,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 24px;
   transition: all 0.4s;
   outline: none !important;
-  background-color: #1f136e;
+  background-color: #149ddd;
   color: #fff;
   width: 40px;
   height: 40px;
@@ -182,11 +223,8 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/background-1.jpg") top ;
+  background-color: lightgrey;
   background-size: cover;
-  border: solid 1px white;
-  padding: 5px;
-  border-radius: 5px;
 }
 #hero:before {
   content: "";
@@ -205,11 +243,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero h1 {
   margin: 0 0 10px 0;
-  font-size: 90px;
+  font-size: 64px;
   font-weight: 700;
-  line-height: 86px;
+  line-height: 56px;
   color: #fff;
-  padding-top: -30px;
 }
 #hero p {
   color: #fff;
@@ -230,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 768px) {
   #hero h1 {
-    font-size: 28px;
+    font-size: 45px;
     line-height: 36px;
   }
   #hero h2 {
@@ -270,7 +307,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #173b6c;
+  background: #663366;
   bottom: 0;
   left: 0;
 }
@@ -278,12 +315,8 @@ section {
   margin-bottom: 0;
 }
 
-.section-title img {
-  margin-bottom: 0;
-  border-radius: 15px;
-} 
 /*--------------------------------------------------------------
-# About
+# A propos
 --------------------------------------------------------------*/
 .about .content h3 {
   font-weight: 700;
@@ -312,7 +345,9 @@ section {
   margin-bottom: 0;
 }
 
-
+/*--------------------------------------------------------------
+# Compétences
+--------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
   display: block;
@@ -326,14 +361,15 @@ section {
   display: block;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #050d18;
+  color: #whitesmoke;
+  box-shadow: 5px 5px 15px white;
 }
 .skills .progress .skill .val {
   float: right;
   font-style: normal;
 }
 .skills .progress-bar-wrap {
-  background: #dce8f8;
+  background: #white;
   height: 10px;
 }
 .skills .progress-bar {
@@ -344,8 +380,14 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Resume
+# Curriculum Vitae
 --------------------------------------------------------------*/
+.section-cv {
+  width: 20%;
+  align-items: center;
+  border-radius: 25px;
+  height: 90%;
+}
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
@@ -397,6 +439,7 @@ section {
   border: 2px solid #1f5297;
 }
 
+
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
@@ -425,7 +468,7 @@ section {
   transition: all 0.3s ease-in-out;
 }
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  color: #black;
+  color: #149ddd;
 }
 .portfolio #portfolio-flters li:last-child {
   margin-right: 0;
@@ -463,7 +506,7 @@ section {
   color: #fff;
   font-size: 28px;
   text-align: center;
-  background: rgba(20, 157, 221, 0.75);
+  background: black;
   transition: 0.3s;
   width: 50%;
 }
@@ -471,7 +514,7 @@ section {
   background: rgba(20, 157, 221, 0.95);
 }
 .portfolio .portfolio-wrap .portfolio-links a + a {
-  border-left: 1px solid black;
+  border-left: 1px solid #37b3ed;
 }
 .portfolio .portfolio-wrap:hover::before {
   top: 0;
@@ -490,14 +533,19 @@ section {
 --------------------------------------------------------------*/
 .portfolio-details {
   padding-top: 40px;
+
+  margin-left: 30%;
 }
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
-  margin-bottom: 30px;
+  margin-top: 20px;
+
 }
 .portfolio-details .portfolio-details-slider .swiper-pagination {
   margin-top: 20px;
   position: relative;
+  margin-bottom: 10px;
+
 }
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
@@ -505,9 +553,11 @@ section {
   background-color: #fff;
   opacity: 1;
   border: 1px solid #149ddd;
+  margin: 10px;
 }
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #149ddd;
+  margin: 10px;
 }
 .portfolio-details .portfolio-info {
   padding: 30px;
@@ -539,8 +589,6 @@ section {
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
-
-
 
 /*--------------------------------------------------------------
 # Contact
@@ -657,7 +705,7 @@ section {
   height: 24px;
   margin: 0 10px -6px 0;
   border: 3px solid #18d26e;
-  border-top-color: #d3d3d3;
+  border-top-color: #eee;
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
 }
@@ -679,7 +727,7 @@ section {
   padding: 10px 15px;
 }
 .contact .php-email-form button[type=submit] {
-  background: #285569;
+  background: #149ddd;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -687,7 +735,7 @@ section {
   border-radius: 4px;
 }
 .contact .php-email-form button[type=submit]:hover {
-  background: #09cf0c;
+  background: #37b3ed;
 }
 @-webkit-keyframes animate-loading {
   0% {
@@ -750,7 +798,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  padding: 15px;
+  padding: 30px;
   color: #f4f6fd;
   font-size: 14px;
   position: fixed;
@@ -758,19 +806,19 @@ section {
   bottom: 0;
   width: 300px;
   z-index: 9999;
-  background: url("../img/background-1.jpg") bottom ;
+  background: url("../img/background-1.jpg") top center;
   background-size: cover;
 }
 #footer .copyright {
-  text-align: left;
+  text-align: center;
 }
 #footer .credits {
   padding-top: 5px;
-  text-align: left;
-  font-size: 20px;
+  text-align: center;
+  font-size: 13px;
   color: #eaebf0;
 }
-@media (max-width: 1199px) {
+@media (max-width: 100%) {
   #footer {
     position: static;
     width: auto;
