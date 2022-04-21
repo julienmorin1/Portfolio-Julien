@@ -17,13 +17,7 @@
   $contact->from_email = $_POST['email'];
   $contact->subject = $_POST['subject'];
 
- 
-  $contact->smtp = array(
-    'host' => 'smtp.free.fr',
-    'username' => 'mail.julien.morin@free.fr',
-    'password' => 'Pwd_tompitt2',
-    'port' => '587'
-  );
+
   
 
   $contact->add_message( $_POST['name'], 'From');
