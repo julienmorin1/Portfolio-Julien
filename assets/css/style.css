@@ -256,6 +256,10 @@ section {
   padding-bottom: 30px;
   width: 100%;
 }
+
+.section-title img {
+  width: 50%;
+}
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
